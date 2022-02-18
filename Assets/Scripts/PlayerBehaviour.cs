@@ -41,6 +41,11 @@ public class PlayerBehaviour : MonoBehaviour
             float currentHealth = game.health;
             game.changeHealth(currentHealth *= sizeIncreaseRate);
 
+            //change the players colour
+            SpriteRenderer otherSprite = other.GetComponent<SpriteRenderer>();
+            playerSprite.color = otherSprite.color;
+
+
             Destroy(other.gameObject);
         }
         
