@@ -48,6 +48,5 @@ public class PlayerBehaviour : MonoBehaviour
 
             Destroy(other.gameObject);
         }
-        
     }
 }

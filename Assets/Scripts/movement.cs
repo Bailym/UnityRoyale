@@ -7,6 +7,7 @@ public class movement : MonoBehaviour
     // Start is called before the first frame update
     private Rigidbody2D playerBody;
     public float maxVelocity;
+    private Vector3 bounceDirection = Vector3.one;
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
@@ -25,7 +26,5 @@ public class movement : MonoBehaviour
         Vector2 moveDirection = new Vector2(inputDirectionHorizontal, inputDirectionVertical);
 
         playerBody.velocity = moveDirection;
-
-
     }
 }

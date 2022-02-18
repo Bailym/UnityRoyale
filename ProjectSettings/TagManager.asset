@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Circle
   - Health Text
+  - Wall
   layers:
   - Default
   - TransparentFX
