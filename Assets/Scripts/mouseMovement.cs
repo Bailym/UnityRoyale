@@ -7,6 +7,7 @@ public class mouseMovement : MonoBehaviour
     private Vector3 mousePosition;
     private Rigidbody2D playerBody;
     public float moveSpeed = 1.25f;
+    public float speedUpMultiplier = 2.0f;
 
     // Use this for initialization
     void Start()
@@ -25,6 +26,5 @@ public class mouseMovement : MonoBehaviour
 
             transform.position = line;
         }
-
     }
 }
