@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class movement : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody2D playerBody;
@@ -10,7 +10,6 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
-        
     }
 
     // Update is called once per frame
@@ -26,5 +25,7 @@ public class playerMovement : MonoBehaviour
         Vector2 moveDirection = new Vector2(inputDirectionHorizontal, inputDirectionVertical);
 
         playerBody.velocity = moveDirection;
+
+
     }
 }
