@@ -9,6 +9,7 @@ public class playArea : MonoBehaviour
     public float interpolationPeriod = 10f;
     Vector2 line;
     Vector2 nextPos;
+    
 
 
 
@@ -38,7 +39,5 @@ public class playArea : MonoBehaviour
 
             nextPos = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));    //generate a new next position
         }
-
-        
     }
 }

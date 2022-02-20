@@ -7,11 +7,11 @@ public class PlayerBehaviour : MonoBehaviour
 {
     Transform playerTransform;
     SpriteRenderer playerSprite;
-    SpriteRenderer otherSprite;
     public float sizeIncreaseRate;
     public string colour;
-
     private Game game;
+    private bool inPlayArea;
+    public float healthLossRate = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +42,17 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
+    }
+
+    private void FixedUpdate()
+    {
+        //if player is not in the area reduce health
+        if (!inPlayArea)
+        {
+            game.changeHealth(game.health - (healthLossRate/100f));
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -68,6 +78,17 @@ public class PlayerBehaviour : MonoBehaviour
 
 
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("PlayArea"))
+        {
+            inPlayArea = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("PlayArea")){
+            inPlayArea = false;
         }
     }
 }
