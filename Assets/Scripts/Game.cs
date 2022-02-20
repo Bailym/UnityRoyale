@@ -8,6 +8,7 @@ public class Game : MonoBehaviour
     
     public float health;
     public TextMeshProUGUI healthText;
+    public GameObject Player;
 
     // Start is called before the first frame update
     void Start()
@@ -27,5 +28,15 @@ public class Game : MonoBehaviour
         //update health and UI
         health = (int)amount;
         healthText.text = "Health: " + health.ToString();
+
+        if(health == 0)
+        {
+            EndGame();
+        }
+    }
+
+    public void EndGame()
+    {
+        Destroy(Player);
     }
 }
