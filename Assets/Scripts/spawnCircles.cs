@@ -24,11 +24,12 @@ public class spawnCircles : MonoBehaviour
         
     }
 
+    //Choose a random circle to spawn from the list and spawn at a random point.
     void SpawnCircle()
     {
         int randomNum = Random.Range(0, circleList.Length);
         GameObject prefab = circleList[randomNum];
-        Vector2 randomPositionOnScreen = Camera.main.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
+        Vector2 randomPositionOnScreen = mainCam.ViewportToWorldPoint(new Vector2(Random.value, Random.value));
         Instantiate(prefab, randomPositionOnScreen, Quaternion.identity);
     }
 }
